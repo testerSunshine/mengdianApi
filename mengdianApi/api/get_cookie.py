@@ -21,8 +21,8 @@ class Get_token():
         data = self._set_yy_token()
         return data
 
-    def get_crm_token(self):
-        data = self._set_crm_token()
+    def get_crm_token(self, username, identityCode, password):
+        data = self._set_crm_token(username, identityCode, password)
         return data
 
     def _set_ghs_token(self, account, pwd):
@@ -43,10 +43,10 @@ class Get_token():
         login_info = {'account': 'operation', 'password': "111111"}
         return self.get_token(YyLogin, yy, login_info)
 
-    def _set_crm_token(self):
+    def _set_crm_token(self, username, identityCode, password):
         """获取crm登陆token"""
         url = "http://121.43.101.99:8080/api/login"
-        login_info = {"username": "hbqddls3", "identityCode": "hbqddls3", "password": "hbqddls3", "validateCode": "111"}
+        login_info = {"username": username, "identityCode": identityCode, "password": password, "validateCode": "111"}
         return self.req_post(url, login_info)
 
     def up_post(self, url, data=None):
@@ -133,6 +133,3 @@ class Get_token():
             print e.reason
         except RequestException, e:
             print e.response
-
-t = Get_token()
-t.get_crm_token()

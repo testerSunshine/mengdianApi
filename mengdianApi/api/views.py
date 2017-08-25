@@ -13,6 +13,7 @@ def index(request):
 
 def get_session(request):
     token = Get_token()
+    print(token)
     if token is not None:
         body = json.loads(request.body)
         type = body["type"]
@@ -44,7 +45,10 @@ def get_session(request):
         r["data"] = data
         return HttpResponse(json.dumps(r))
     elif type == "crm":
-        cookie = token.get_crm_token()
+        username = body["username"]
+        identityCode = body["identityCode"]
+        password = body["password"]
+        cookie = token.get_crm_token(username, identityCode, password)
         r = OrderedDict()
         data = OrderedDict()
         data["cookie"] = cookie
