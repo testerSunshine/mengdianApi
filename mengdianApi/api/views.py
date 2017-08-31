@@ -45,18 +45,22 @@ def get_session(request):
         r["data"] = data
         return HttpResponse(json.dumps(r))
     elif type == "crm":
-        username = body["username"]
-        identityCode = body["identityCode"]
-        password = body["password"]
-        cookie = token.get_crm_token(username, identityCode, password)
-        r = OrderedDict()
-        data = OrderedDict()
-        data["cookie"] = cookie
-        r["code"] = 0
-        r["msg"] = "success"
-        r["type"] = "crm"
-        r["data"] = data
-        return HttpResponse(json.dumps(r))
+        username = body.get("username", None)
+        identityCode = body.get("identityCode", None)
+        password = body.get("password", None)
+        loginType = body.get("loginType", None)
+        if username is not None and identityCode is not None and password is not None and loginType is not None:
+            cookie = token.get_crm_token(username, identityCode, password, loginType)
+            r = OrderedDict()
+            data = OrderedDict()
+            data["cookie"] = cookie
+            r["code"] = 0
+            r["msg"] = "success"
+            r["type"] = "crm"
+            r["data"] = data
+            return HttpResponse(json.dumps(r))
+        else:
+            return HttpResponse({"code": 999999, "message": "crm登陆必填参数不得为空，username，identityCode，password，loginType"})
     else:
         return HttpResponse(json.dumps({"code": 999999, "message": "type类型不能为空!"}))
 
