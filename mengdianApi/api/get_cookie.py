@@ -63,7 +63,7 @@ class Get_token():
         verify_data = {"mobile": 15618715582, "mode": "h5FastLogin"}
         self.req_post(verify_url, verify_data, is_need_con=True)
 
-        verify_code_url = "http://10.11.16.216:8091/tools/getCode.php?env=qa&mobile=15618715582_0086&version=v2_h5FastLogin&dataType=json"  # 获取验证码
+        verify_code_url = "http://md.delivery.weimobqa.com/tools/getCode.php?env=qa&mobile=15618715582_0086&version=v2_h5FastLogin&dataType=json"  # 获取验证码
         verify_code_data = {"env": "qa",
                             "mobile": "15618715582_0086",
                             "version": "v2_h5FastLogin",
