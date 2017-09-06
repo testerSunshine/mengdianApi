@@ -61,6 +61,19 @@ def get_session(request):
             return HttpResponse(json.dumps(r))
         else:
             return HttpResponse({"code": 999999, "message": "crm登陆必填参数不得为空，username，identityCode，password，loginType"})
+    elif type == "h5":
+        cookie = token.get_h5_token()
+        if cookie.get("cm.sid") != "null":
+            r = OrderedDict()
+            data = OrderedDict()
+            data["cookie"] = cookie
+            r["code"] = 0
+            r["msg"] = "success"
+            r["type"] = "crm"
+            r["data"] = data
+            return HttpResponse(json.dumps(r))
+        else:
+            return HttpResponse({"code": 999999, "message": "h5登录失败，请自行查看接口"})
     else:
         return HttpResponse(json.dumps({"code": 999999, "message": "type类型不能为空!"}))
 

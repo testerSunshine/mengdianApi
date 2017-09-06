@@ -1,4 +1,6 @@
 # -*- coding: utf8 -*-
+import json
+
 __author__ = 'MR.wen'
 
 import cookielib
@@ -25,6 +27,10 @@ class Get_token():
         data = self._set_crm_token(username, identityCode, password, loginType)
         return data
 
+    def get_h5_token(self):
+        data = self._set_h5_token()
+        return data
+
     def _set_ghs_token(self, account, pwd):
         """
         将供货商后台必须的weimob id 赋值给__cookies_ghs
@@ -49,6 +55,29 @@ class Get_token():
         login_info = {"username": username, "identityCode": identityCode, "password": password, "validateCode": "111", "loginType": loginType}
         return self.req_post(url, login_info)
 
+    def _set_h5_token(self):
+        """
+        获取H5登陆 session，固定手机号码15618715582
+        """
+        verify_url = "http://m-qa.weimobqa.com/api/user/verify"   # 发送H5登陆验证码
+        verify_data = {"mobile": 15618715582, "mode": "h5FastLogin"}
+        self.req_post(verify_url, verify_data, is_need_con=True)
+
+        verify_code_url = "http://10.11.16.216:8091/tools/getCode.php?env=qa&mobile=15618715582_0086&version=v2_h5FastLogin&dataType=json"  # 获取验证码
+        verify_code_data = {"env": "qa",
+                            "mobile": "15618715582_0086",
+                            "version": "v2_h5FastLogin",
+                            "dataType": "json"}
+        results = json.loads(self.req_post(verify_code_url, verify_code_data, is_need_con=True))
+        verifycode = eval(results).get("code", None)   # 将返回值转成字典格式
+        if verifycode is not None and verifycode is not "false":
+            url = "http://m-qa.weimobqa.com/api/user/login"  # 登陆很h5获得cookie
+            login_info = {"verifycode": verifycode, "mobile": 15618715582, "mode": "h5FastLogin"}
+            code = self.req_post(url, login_info)
+            return code
+        else:
+            return {'cm.sid': 'null'}
+
     def up_post(self, url, data=None):
         """
         urllib2请求
@@ -60,7 +89,7 @@ class Get_token():
         s_data = urllib.urlencode(data)
         cookies = cookielib.CookieJar()
         opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookies))
-        result = opener.open(req, s_data)
+        opener.open(req, s_data)
         c = dict()
         for ck in cookies:
             c[ck.name] = ck.value
@@ -87,7 +116,7 @@ class Get_token():
         except urllib2.HTTPError, e:
             return e.reason
 
-    def req_post(self, url, data, cookies=None):
+    def req_post(self, url, data, cookies=None, is_need_con=False):
         """
          requests post请求
          :param url:
@@ -96,13 +125,17 @@ class Get_token():
          """
         if data is None:
             raise Exception('date不可缺少...')
+            print(result.content)
         else:
             result = requests.post(url=url, cookies=cookies, data=data)
             if result.status_code == 200:
                 c = dict()
                 for cookie in result.cookies:
                     c[cookie.name] = cookie.value
-                return c
+                if is_need_con:
+                    return json.dumps(result.content)
+                else:
+                    return c
             else:
                 return "登陆失败"
 
@@ -133,3 +166,7 @@ class Get_token():
             print e.reason
         except RequestException, e:
             print e.response
+
+
+g = Get_token()
+print(g.get_h5_token())
