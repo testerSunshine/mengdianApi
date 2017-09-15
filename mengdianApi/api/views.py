@@ -66,10 +66,10 @@ def get_session(request):
         if cookie.get("cm.sid") != "null":
             r = OrderedDict()
             data = OrderedDict()
-            data["cookie"] = cookie
+            data["cookie"] = cookie["cm.sid"]
             r["code"] = 0
             r["msg"] = "success"
-            r["type"] = "crm"
+            r["type"] = "h5"
             r["data"] = data
             return HttpResponse(json.dumps(r))
         else:

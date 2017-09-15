@@ -167,6 +167,6 @@ class Get_token():
         except RequestException, e:
             print e.response
 
-
-g = Get_token()
-print(g.get_h5_token())
+#
+# g = Get_token()
+# print(g.get_h5_token())
