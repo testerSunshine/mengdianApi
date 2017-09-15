@@ -64,14 +64,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mengdianApi/api/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="68" column="45" lean-forward="true" selection-start-line="68" selection-start-column="45" selection-end-line="68" selection-end-column="45" />
+              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,6 +131,7 @@
         <option value="$PROJECT_DIR$/mengdianApi/settings.py" />
         <option value="$PROJECT_DIR$/mengdianApi/api/get_cookie.py" />
         <option value="$PROJECT_DIR$/mengdianApi/api/views.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -818,10 +829,18 @@
     <entry file="file://$PROJECT_DIR$/mengdianApi/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="68" column="45" lean-forward="true" selection-start-line="68" selection-start-column="45" selection-end-line="68" selection-end-column="45" />
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
