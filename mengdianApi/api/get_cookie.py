@@ -125,7 +125,6 @@ class Get_token():
          """
         if data is None:
             raise Exception('date不可缺少...')
-            print(result.content)
         else:
             result = requests.post(url=url, cookies=cookies, data=data)
             if result.status_code == 200:

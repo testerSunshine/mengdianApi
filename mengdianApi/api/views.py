@@ -4,11 +4,35 @@ import json
 from collections import OrderedDict
 
 from django.http import HttpResponse
+
+from mengdianApi.api.ServerUtils import ServerUtils
 from mengdianApi.api.get_cookie import Get_token
 
 
 def index(request):
     return HttpResponse("Hello Django!")
+
+
+def server_utils(request):
+    """
+    服务器操作
+    :param request:
+    :return:
+    """
+    body = json.loads(request.body)
+    host = body.get("host", "")
+    tomcat_num = body.get("tomcat_num", "")
+    tomcat1 = body.get("tomcat1", "")
+    tomcat2 = body.get("tomcat2", "")
+    tomcat3 = body.get("tomcat3", "")
+    if host is "":
+        return HttpResponse(json.dumps({"code": 999999, "message": "host必填参数不能空！"}))
+    if tomcat1 is "" and tomcat2 is "" and tomcat3 is "":
+        return HttpResponse(json.dumps({"code": 999999, "message": "参数不能为空！"}))
+    su = ServerUtils(host=host, tomcat_num=tomcat_num, tomcat1=tomcat1, tomcat2=tomcat2, tomcat3=tomcat3)
+    message = su.install_tomcat()
+    print su
+    return HttpResponse(json.dumps({"code": 0, "message": message}))
 
 
 def get_session(request):
