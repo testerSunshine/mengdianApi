@@ -27,7 +27,7 @@ class ServerUtils:
         :return:
         """
         try:
-            console = subprocess.check_output("sh install_tomcat.sh {0} {1} {2} {3} {4}".format(self.utils["host"],
+            console = subprocess.check_output("sh /data/deploy/install_tomcat.sh {0} {1} {2} {3} {4}".format(self.utils["host"],
                                                                                                 self.utils["tomcat_num"],
                                                                                                 self.utils["tomcat1"],
                                                                                                 self.utils["tomcat2"],
