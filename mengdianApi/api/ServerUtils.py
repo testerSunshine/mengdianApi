@@ -37,7 +37,16 @@ class ServerUtils:
         except subprocess.CalledProcessError as err:
             return "命令错误: {0}".format(err)
 
-
+    def install_jdk(self):
+        """
+        安装jdk
+        :return:
+        """
+        try:
+            console = subprocess.check_output("sh /data/deploy/install_jdk.sh {0}".format(self.utils["host"],), shell=True)
+            return console
+        except subprocess.CalledProcessError as err:
+            return "命令错误: {0}".format(err)
 
 # s = ServerUtils(host=1)
 # s.install_tomcat()

@@ -19,20 +19,24 @@ def server_utils(request):
     :param request:
     :return:
     """
+    global message
     body = json.loads(request.body)
     host = body.get("host", "")
-    tomcat_num = body.get("tomcat_num", "")
-    tomcat1 = body.get("tomcat1", "")
-    tomcat2 = body.get("tomcat2", "")
-    tomcat3 = body.get("tomcat3", "")
+    t = body.get("t", "")
     if host is "":
         return HttpResponse(json.dumps({"code": 999999, "message": "host必填参数不能空！"}))
-    # if tomcat1 is "" and tomcat2 is "" and tomcat3 is "":
-    #     return HttpResponse(json.dumps({"code": 999999, "message": "参数不能为空！"}))
-    su = ServerUtils(host=host, tomcat_num=tomcat_num, tomcat1=tomcat1, tomcat2=tomcat2, tomcat3=tomcat3)
-    message = su.install_tomcat()
-    print su
-    return HttpResponse(json.dumps({"code": 0, "message": message}))
+    if t == "tm":
+        tomcat_num = body.get("tomcat_num", "")
+        tomcat1 = body.get("tomcat1", "")
+        tomcat2 = body.get("tomcat2", "")
+        tomcat3 = body.get("tomcat3", "")
+        su = ServerUtils(host=host, tomcat_num=tomcat_num, tomcat1=tomcat1, tomcat2=tomcat2, tomcat3=tomcat3)
+        message = su.install_tomcat()
+        print su
+    elif t == "j":
+        su = ServerUtils(host=host)
+        message = su.install_jdk()
+        return HttpResponse(json.dumps({"code": 0, "message": message}))
 
 
 def get_session(request):
