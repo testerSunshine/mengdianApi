@@ -39,11 +39,13 @@ class ServerUtils:
 
     def install_jdk(self):
         """
-        安装jdk
+        安装jdk&wcc
         :return:
         """
         try:
-            console = subprocess.check_output("sh /data/deploy/install_jdk.sh {0}".format(self.utils["host"],), shell=True)
+            console = subprocess.check_output("sh /data/deploy/install_{}.sh {0}".format(self.utils["t"],
+                                                                                         self.utils["host"],
+                                                                                         ), shell=True)
             return console
         except subprocess.CalledProcessError as err:
             return "命令错误: {0}".format(err)

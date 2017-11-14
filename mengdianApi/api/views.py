@@ -33,8 +33,8 @@ def server_utils(request):
         su = ServerUtils(host=host, tomcat_num=tomcat_num, tomcat1=tomcat1, tomcat2=tomcat2, tomcat3=tomcat3)
         message = su.install_tomcat()
         print su
-    elif t == "j":
-        su = ServerUtils(host=host)
+    elif t == "jdk" or t == "wcc":
+        su = ServerUtils(host=host, t=t)
         message = su.install_jdk()
         return HttpResponse(json.dumps({"code": 0, "message": message}))
 
