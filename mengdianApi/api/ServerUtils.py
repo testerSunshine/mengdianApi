@@ -42,6 +42,7 @@ class ServerUtils:
         安装jdk&wcc
         :return:
         """
+        print "安装项目： {0}".format(self.utils["t"],)
         try:
             console = subprocess.check_output("sh /data/deploy/install_{}.sh {0}".format(self.utils["t"],
                                                                                          self.utils["host"],
