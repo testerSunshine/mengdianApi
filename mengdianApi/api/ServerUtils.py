@@ -44,7 +44,7 @@ class ServerUtils:
         """
         print "安装项目： {0}".format(self.utils["t"],)
         try:
-            console = subprocess.check_output("sh /data/deploy/install_{0}.sh {1}".format(self.utils["t"],
+            console = subprocess.check_output("sh /data/deploy/install_{0}.sh {1} {2}".format(self.utils["t"],
                                                                                          self.utils["host"],
                                                                                          self.utils["jdk_version"],
                                                                                          ), shell=True)
