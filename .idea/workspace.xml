@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="eecff65f-732b-44ce-8537-adabfc9329ac" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mengdianApi/api/ServerUtils.py" afterPath="$PROJECT_DIR$/mengdianApi/api/ServerUtils.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mengdianApi/api/views.py" afterPath="$PROJECT_DIR$/mengdianApi/api/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mengdianApi/api/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="38" column="25" lean-forward="false" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+            <state relative-caret-position="349">
+              <caret line="35" column="69" lean-forward="false" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="69" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
@@ -91,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServerUtils.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ServerUtils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mengdianApi/api/ServerUtils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="54" column="25" lean-forward="false" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+            <state relative-caret-position="335">
+              <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
               <folding>
                 <element signature="e#46#57#0" expanded="true" />
               </folding>
@@ -130,8 +129,8 @@
         <option value="$PROJECT_DIR$/mengdianApi/api/server_utils.py" />
         <option value="$PROJECT_DIR$/mengdianApi/api/get_cookie.py" />
         <option value="$PROJECT_DIR$/mengdianApi/urls.py" />
-        <option value="$PROJECT_DIR$/mengdianApi/api/views.py" />
         <option value="$PROJECT_DIR$/mengdianApi/api/ServerUtils.py" />
+        <option value="$PROJECT_DIR$/mengdianApi/api/views.py" />
       </list>
     </option>
   </component>
@@ -602,7 +601,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510654687344</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="增加jdk区分版本安装">
+      <created>1510712829639</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1510712829639</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -661,7 +667,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Tomcat安装" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tomcat安装" />
+    <MESSAGE value="增加jdk区分版本安装" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加jdk区分版本安装" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1010,22 +1017,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mengdianApi/api/views.py">
+    <entry file="file://$PROJECT_DIR$/mengdianApi/api/ServerUtils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="38" column="25" lean-forward="false" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+        <state relative-caret-position="335">
+          <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
           <folding>
-            <element signature="e#24#63#0" expanded="true" />
+            <element signature="e#46#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mengdianApi/api/ServerUtils.py">
+    <entry file="file://$PROJECT_DIR$/mengdianApi/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="54" column="25" lean-forward="false" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+        <state relative-caret-position="349">
+          <caret line="35" column="69" lean-forward="false" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="69" />
           <folding>
-            <element signature="e#46#57#0" expanded="true" />
+            <element signature="e#24#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
