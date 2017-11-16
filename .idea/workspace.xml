@@ -4,8 +4,6 @@
     <list default="true" id="eecff65f-732b-44ce-8537-adabfc9329ac" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mengdianApi/api/ServerUtils.py" afterPath="$PROJECT_DIR$/mengdianApi/api/ServerUtils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mengdianApi/api/tests.py" afterPath="$PROJECT_DIR$/mengdianApi/api/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mengdianApi/api/views.py" afterPath="$PROJECT_DIR$/mengdianApi/api/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,7 +37,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mengdianApi/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
@@ -95,6 +93,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ServerUtils.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mengdianApi/api/ServerUtils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="556">
+              <caret line="57" column="77" lean-forward="false" selection-start-line="57" selection-start-column="77" selection-end-line="57" selection-end-column="77" />
+              <folding>
+                <element signature="e#46#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -123,8 +133,8 @@
         <option value="$PROJECT_DIR$/mengdianApi/api/get_cookie.py" />
         <option value="$PROJECT_DIR$/mengdianApi/urls.py" />
         <option value="$PROJECT_DIR$/mengdianApi/api/tests.py" />
-        <option value="$PROJECT_DIR$/mengdianApi/api/ServerUtils.py" />
         <option value="$PROJECT_DIR$/mengdianApi/api/views.py" />
+        <option value="$PROJECT_DIR$/mengdianApi/api/ServerUtils.py" />
       </list>
     </option>
   </component>
@@ -636,7 +646,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510722726451</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="增加操控java服务">
+      <created>1510827922756</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1510827922756</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -697,7 +714,8 @@
     <MESSAGE value="Tomcat安装" />
     <MESSAGE value="增加jdk区分版本安装" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="增加操控java服务" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加操控java服务" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1015,28 +1033,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mengdianApi/api/ServerUtils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="54" column="8" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
-          <folding>
-            <element signature="e#46#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
           <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mengdianApi/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1048,6 +1048,14 @@
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mengdianApi/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1065,6 +1073,16 @@
           <caret line="23" column="45" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="45" />
           <folding>
             <element signature="e#645#677#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mengdianApi/api/ServerUtils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="57" column="77" lean-forward="false" selection-start-line="57" selection-start-column="77" selection-end-line="57" selection-end-column="77" />
+          <folding>
+            <element signature="e#46#57#0" expanded="true" />
           </folding>
         </state>
       </provider>

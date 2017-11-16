@@ -55,7 +55,7 @@ class ServerUtils:
     def server_manage(self):
         print "{0} server".format(self.utils["utils"])
         try:
-            console = subprocess.check_output("sh /data/deploy/install_tomcat.sh {0} {1} {2}".format(self.utils["host"],
+            console = subprocess.check_output("sh /data/deploy/restart_tomcat.sh {0} {1} {2}".format(self.utils["host"],
                                                                                                 self.utils["path"],
                                                                                                 self.utils["utils"],
                                                                                                 ), shell=True)
