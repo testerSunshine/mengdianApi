@@ -52,5 +52,17 @@ class ServerUtils:
         except subprocess.CalledProcessError as err:
             return "命令错误: {0}".format(err)
 
+    def server_manage(self):
+        print "{0} server".format(self.utils["utils"])
+        try:
+            console = subprocess.check_output("sh /data/deploy/install_tomcat.sh {0} {1} {2}".format(self.utils["host"],
+                                                                                                self.utils["path"],
+                                                                                                self.utils["utils"],
+                                                                                                ), shell=True)
+            return console
+        except subprocess.CalledProcessError as err:
+            return "命令错误: {0}".format(err)
+
+
 # s = ServerUtils(host=1)
 # s.install_tomcat()

@@ -40,6 +40,14 @@ def server_utils(request):
         message = su.install_jdk()
         print message
         return HttpResponse(json.dumps({"code": 0, "message": message}))
+    elif t == "r":
+        host = body.get("host", "")
+        path = body.get("path", "")
+        utils = body.get("utils", "")
+        su = ServerUtils(host=host, path=path, utils=utils)
+        message = su.server_manage()
+        print message
+        return HttpResponse(json.dumps({"code": 0, "message": message}))
 
 
 def get_session(request):
@@ -107,4 +115,3 @@ def get_session(request):
             return HttpResponse({"code": 999999, "message": "h5登录失败，请自行查看接口"})
     else:
         return HttpResponse(json.dumps({"code": 999999, "message": "type类型不能为空!"}))
-
