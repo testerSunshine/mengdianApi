@@ -27,12 +27,14 @@ class ServerUtils:
         :return:
         """
         try:
-            console = subprocess.check_output("sh /data/deploy/install_tomcat.sh {0} {1} {2} {3} {4}".format(self.utils["host"],
-                                                                                                self.utils["tomcat_num"],
-                                                                                                self.utils["tomcat1"],
-                                                                                                self.utils["tomcat2"],
-                                                                                                self.utils["tomcat3"],
-                                                                                                ), shell=True)
+            console = subprocess.check_output("sh /data/deploy/install_tomcat{0}.sh {1} {2} {3} {4} {5}"
+                                                                .format(self.utils["tomcat_version"],
+                                                                        self.utils["host"],
+                                                                        self.utils["tomcat_num"],
+                                                                        self.utils["tomcat1"],
+                                                                        self.utils["tomcat2"],
+                                                                        self.utils["tomcat3"],
+                                                                        ), shell=True)
             return console
         except subprocess.CalledProcessError as err:
             return "命令错误: {0}".format(err)
