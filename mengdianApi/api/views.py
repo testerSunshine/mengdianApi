@@ -27,10 +27,11 @@ def server_utils(request):
         return HttpResponse(json.dumps({"code": 999999, "message": "host必填参数不能空！"}))
     if t == "tm":
         tomcat_num = body.get("tomcat_num", "")
+        tomcat_version = body.get("tomcat_version", "")
         tomcat1 = body.get("tomcat1", "")
         tomcat2 = body.get("tomcat2", "")
         tomcat3 = body.get("tomcat3", "")
-        su = ServerUtils(host=host, tomcat_num=tomcat_num, tomcat1=tomcat1, tomcat2=tomcat2, tomcat3=tomcat3)
+        su = ServerUtils(host=host, tomcat_version=tomcat_version, tomcat_num=tomcat_num, tomcat1=tomcat1, tomcat2=tomcat2, tomcat3=tomcat3)
         message = su.install_tomcat()
         print message
         return HttpResponse(json.dumps({"code": 0, "message": message}))
