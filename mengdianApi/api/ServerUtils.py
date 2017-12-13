@@ -4,6 +4,7 @@ __author__ = 'MR.wen'
 import json
 import subprocess
 import sys
+import logger
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -26,12 +27,12 @@ class ServerUtils:
         安装Tomcat
         :return:
         """
-        print "sh /data/deploy/install_tomcat{0}.sh {1} {2} {3} {4} {5}".format(self.utils["tomcat_version"],
+        logger.log(msg="sh /data/deploy/install_tomcat{0}.sh {1} {2} {3} {4} {5}".format(self.utils["tomcat_version"],
                                                                                 self.utils["host"],
                                                                                 self.utils["tomcat_num"],
                                                                                 self.utils["tomcat1"],
                                                                                 self.utils["tomcat2"],
-                                                                                self.utils["tomcat3"],)
+                                                                                self.utils["tomcat3"],))
         try:
             console = subprocess.check_output("sh /data/deploy/install_tomcat{0}.sh {1} {2} {3} {4} {5}"
                                                                 .format(self.utils["tomcat_version"],
