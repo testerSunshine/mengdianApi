@@ -42,8 +42,10 @@ class ServerUtils:
                                                                         self.utils["tomcat2"],
                                                                         self.utils["tomcat3"],
                                                                         ), shell=True)
+            logger.log(msg=console)
             return console
         except subprocess.CalledProcessError as err:
+            logger.log(msg=err.message)
             return "命令错误: {0}".format(err)
 
     def install_jdk(self):
@@ -51,27 +53,27 @@ class ServerUtils:
         安装jdk&wcc
         :return:
         """
-        print "安装项目： {0}".format(self.utils["t"],)
+        logger.log(msg="安装项目： {0}".format(self.utils["t"],))
         try:
             console = subprocess.check_output("sh /data/deploy/install_{0}.sh {1} {2}".format(self.utils["t"],
                                                                                          self.utils["host"],
                                                                                          self.utils["jdk_version"],
                                                                                          ), shell=True)
+            logger.log(msg=console)
             return console
         except subprocess.CalledProcessError as err:
+            logger.log(msg=err.message)
             return "命令错误: {0}".format(err)
 
     def server_manage(self):
-        print "{0} server".format(self.utils["utils"])
+        logger.log(msg="{0} server".format(self.utils["utils"]))
         try:
             console = subprocess.check_output("sh /data/deploy/restart_tomcat.sh {0} {1} {2}".format(self.utils["host"],
                                                                                                 self.utils["path"],
                                                                                                 self.utils["utils"],
                                                                                                 ), shell=True)
+            logger.log(msg=console)
             return console
         except subprocess.CalledProcessError as err:
+            logger.log(msg=err.message)
             return "命令错误: {0}".format(err)
-
-
-# s = ServerUtils(host=1)
-# s.install_tomcat()
